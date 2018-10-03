@@ -1,0 +1,45 @@
+body {
+	font-family: "Helvetica","Arial",serif;
+	color: #333;
+	background: #ccc;
+	margin: 1em 10%;
+}
+h1 {
+	color: #333;
+	background-color: transparent;
+}
+a {
+	color: #c60;
+	background-color: transparent;
+	font-weight: 700;
+	text-decoration: none;
+}
+ul {
+	padding: 0;
+}
+li {
+	float: left;
+	padding: 1em;
+	list-style: none;
+}
+img {
+	display: block;
+	clear: both;
+	width: 600px;
+	height: 400px;
+}
+#description{
+	font: italic 500 24px "微软雅黑";
+	color: #0f0;	
+}
+#galleryPic {
+	list-style: none;
+}
+#galleryPic li {
+	display: inline;
+}
+#galleryPic li a img {
+	/*display: inline-block;*/
+	width: 200px;
+	height: 100px;
+}

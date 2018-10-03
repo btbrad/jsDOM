@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Shopping list</title>
+	<style type="text/css">
+		body {
+			color: #fff;
+			background-color: #000;
+		}
+		p {
+			color: yellow;
+			font: 1.2em "arial", sans-serif;
+		}
+		#purchases {
+			border: 1px solid #fff;
+			background-color: #333;
+			color: #ccc;
+			padding: 1em;
+		}
+		#purchases li {
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>What to buy</h1>
+	<p title="a gentle reminder">Don't forget to buy these stuff.</p>
+	<p>this is just a test</p>
+	<ul id="purchases">
+		<li>A tin of beans</li>
+		<li class="sale">Cheese</li>
+		<li class="sale important">Milk</li>
+	</ul>
+	<script>
+		// alert(typeof document.getElementById("purchases"));
+		// alert(document.getElementsByTagName("li").length);
+		// var items = document.getElementsByTagName("li");
+		// for (var i = 0; i < items.length; i++) {
+		// 	alert(typeof items[i]);
+		// }
+		// var shopping = document.getElementById("purchases");
+		// console.log(shopping);
+		// console.log(shopping.getElementsByClassName("sale").length);
+		var paras = document.getElementsByTagName("p");
+		for (var i = 0; i < paras.length; i++) {
+			var title_text =  paras[i].getAttribute("title");
+			if (title_text) {
+				paras[i].setAttribute("title", "brand new title text");
+				console.log(paras[i].getAttribute("title"));
+			}
+		}
+		var shopping = document.getElementById("purchases");
+		console.log(shopping.getAttribute("title"));
+		shopping.setAttribute("title", "a list of goods");
+		console.log(shopping.getAttribute("title"));
+	</script>
+</body>
+</html>
