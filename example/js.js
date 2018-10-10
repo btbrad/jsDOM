@@ -1,5 +1,8 @@
 "use strict";
 function calculate() {
+	if (!document.getElementById || !document.getElementsByTagName) {
+		return false;
+	}
 	var amount = document.getElementById("amount");
 	var apr = document.getElementById("apr");
 	var years = document.getElementById("years");
@@ -8,6 +11,13 @@ function calculate() {
 	var total = document.getElementById("total");
 	var totalinterest = document.getElementById("totalinterest");
 	
+	var inputList = document.getElementsByTagName("input");
+	for (var i = inputList.length - 1; i >= 0; i--) {
+		inputList[i].onchange = function () {
+			calculate();
+		};
+	}
+
 	var principal = parseFloat(amount.value);
 	var interest = parseFloat(apr.value)/100/12;
 	var payments = parseFloat(years.value)*12;
@@ -27,7 +37,7 @@ function calculate() {
 			getLenders(amount.value,apr.value,years.value,zipcode.value);
 		}
 		catch(e){
-			console.log(e);
+			// console.log(e);
 		}
 
 		chart(principal,interest,monthly,payments);
